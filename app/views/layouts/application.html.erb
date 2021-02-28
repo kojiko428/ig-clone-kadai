@@ -4,12 +4,19 @@
     <title>Instoblog</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <!-- スマホサイズの媒体に適用 -->
+    <meta name="viewport" content="width=device-width">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <header>
+        <ul>
+          <li><a>Instogram</a></li>
+          <li><a href="http://localhost:3000/">トップページ</a></li>
+        </ul>
+      </header>
     <% flash.each do |key, value| %>
     <%= content_tag(:div, value, class: "#{key}") %>
     <% end %>
@@ -21,5 +28,9 @@
       <%= link_to "Login", new_session_path %>
     <% end %>
     <%= yield %>
+    <footer>
+     <p>運営会社DIVE INTO CODE株式会社</p>
+     <p>© 2015-2016 DIVE INTO CODE Corp.</p>
+   </footer>
   </body>
 </html>

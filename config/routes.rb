@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  get 'sessions/new'
+   root to: 'tops#index'
+   get 'sessions/new'
    resources :blogs do
   # comfirmのルーティン化
     collection do
