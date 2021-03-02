@@ -20,6 +20,8 @@ class BlogsController < ApplicationController
   end
   def show
   # @blog = Blog.find(params[:id])
+  # お気に入り機能
+  @favorite = current_user.favorites.find_by(blog_id: @blog.id)
   end
   def edit
   # @blog = Blog.find(params[:id])

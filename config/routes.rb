@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
    root to: 'tops#index'
-   get 'sessions/new'
+   # get 'sessions/new'
    resources :blogs do
   # comfirmのルーティン化
     collection do
@@ -9,4 +9,6 @@ Rails.application.routes.draw do
   end
    resources :sessions, only: [:new, :create, :destroy]
    resources :users, only: [:new, :create, :show]
+# お気に入り
+   resources :favorites, only: [:create, :destroy]
 end
