@@ -1,5 +1,13 @@
 <h1><%= @user.name %>のページ</h1>
 <p>メールアドレス: <%= @user.email %></p>
+
+<p>プロフィール画像:</p>
+<P class="btn btn-default"><a href="">編集する</a></p>
+
+
+<br>
+<P class="btn btn-default"><a href="">お気に入り</a></p>
+<br>
 <%= link_to '新規作成する', new_blog_path %>
 <br>
 <%= link_to 'ブログ一覧画面に戻る',  blogs_path %>

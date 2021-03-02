@@ -11,4 +11,6 @@ class User < ApplicationRecord
   has_many :blogs
   # 多対多のアソシエーション
   has_many :favorites, dependent: :destroy
+  # 写真アップロード
+  mount_uploader :image, ImageUploader
 end
