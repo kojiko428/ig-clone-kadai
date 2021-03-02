@@ -8,4 +8,7 @@ class Blog < ApplicationRecord
   # 多対多のアソシエーション
   has_many :favorites, dependent: :destroy
   has_many :favorite_users, through: :favorites, source: :user
+
+  # 写真アップロード
+  mount_uploader :image, ImageUploader
 end
