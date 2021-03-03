@@ -30,7 +30,7 @@ class BlogsController < ApplicationController
    # @blog = Blog.find(params[:id])
    if @blog.update(blog_params)
      redirect_to blogs_path, notice: "ブログを編集しました！"
-   else
+   elsif
      render :edit
    end
   end

@@ -13,4 +13,6 @@ class User < ApplicationRecord
   has_many :favorites, dependent: :destroy
   # 写真アップロード
   mount_uploader :image, ImageUploader
+  # 画像がない場合のバリデーション
+  validates :image, absence: false
 end
