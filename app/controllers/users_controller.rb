@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 skip_before_action :login_required, only: [:new, :create]
 before_action :set_user, only: [:show, :edit, :update]
+before_action :correct_user, only: [:edit, :update, :destroy]
 
   def new
     @user = User.new
@@ -40,6 +41,11 @@ private
  end
  def set_user
   @user = User.find(params[:id])
+ end
+ def correct_user
+   if current_user.id != @user.id
+     redirect_to user_path
+   end
  end
 
 end
