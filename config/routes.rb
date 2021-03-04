@@ -12,4 +12,5 @@ Rails.application.routes.draw do
 # お気に入り
    resources :favorites
    # only: [:create, :destroy]
+   mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
 end

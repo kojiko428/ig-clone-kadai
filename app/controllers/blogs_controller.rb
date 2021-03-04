@@ -13,6 +13,8 @@ class BlogsController < ApplicationController
   if params[:back]
       render :new
     elsif @blog.save
+     # 追記 投稿後メール送信
+     BlogMailer.blog_mail(@blog).deliver
      redirect_to blogs_path, notice: "ブログを作成しました！"
      else
      render :new
