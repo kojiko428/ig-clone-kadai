@@ -10,7 +10,7 @@
   <%= form.hidden_field :image_cache %>
   <p>タイトル:<%= @blog.title %></p>
   <p>本文:<%= @blog.content %></p>
-  <p>Image:<%= image_tag @blog.image.url %> </p>
+  <p>Image:<%= image_tag @blog.image.url ,size: '50x50'%> </p>
 
   <%= form.submit  "登録する" %>
   <%= form.submit "戻る", name: 'back' %>

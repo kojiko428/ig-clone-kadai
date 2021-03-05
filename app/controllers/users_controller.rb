@@ -18,7 +18,7 @@ before_action :correct_user, only: [:edit, :update, :destroy]
     # @user = User.find(params[:id])
   end
 
-# 追記
+  # 追記
   def edit
     # @user = User.find(params[:id])
 
@@ -32,20 +32,17 @@ before_action :correct_user, only: [:edit, :update, :destroy]
    end
   end
 
-
-
-private
- def user_params
+  private
+    def user_params
      params.require(:user).permit(:name, :email, :password,
                                   :password_confirmation, :image,:image_cache)
- end
- def set_user
-  @user = User.find(params[:id])
- end
- def correct_user
-   if current_user.id != @user.id
-     redirect_to user_path
-   end
- end
-
+    end
+    def set_user
+     @user = User.find(params[:id])
+    end
+    def correct_user
+    if current_user.id != @user.id
+    redirect_to user_path
+    end
+  end
 end

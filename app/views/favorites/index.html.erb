@@ -1,4 +1,5 @@
 <h1>お気に入り</h1>
+
 <table>
   <th>
     <tr>
@@ -16,7 +17,7 @@
         <td><%= favorite.blog.user.name %></td>
         <td><%= favorite.blog.title %></td>
         <td><%= favorite.blog.content %></td>
-        <td><%= image_tag favorite.blog.image.url %></td>
+        <td><%= image_tag favorite.blog.image.url, size: '50x50' %></td>
       </tr>
     <% end %>
   </body>

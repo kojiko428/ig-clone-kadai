@@ -13,7 +13,7 @@
     <td><%= "#{blog.user.name}さんのブログ" %></td>
     <td><%= blog.title %></td>
     <td><%= blog.content %></td>
-    <td><%= image_tag blog.image.url %></td>
+    <td><%= image_tag blog.image.url , size: '50x50'%></td>
     <td><%= link_to '【詳細を確認する】', blog_path(blog.id) %></td>
 
 <!-- ログインユーザーのみ入力できる -->
